@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Match Maker</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,600&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<i class="st" style="left:12%;top:18%;font-size:14px">&#10022;</i><i class="st" style="right:10%;top:34%;font-size:18px;animation-delay:1.4s">&#10022;</i><i class="st" style="left:8%;top:68%;font-size:12px;animation-delay:2.6s">&#10022;</i><i class="st" style="right:16%;top:82%;font-size:15px;animation-delay:.8s">&#10022;</i>
+<main>
+  <h1>Match <span>Maker</span></h1>
+  <p class="sub">Two names &middot; One heart</p>
+  <div class="orn">&#9829;</div>
+
+  <div class="stage">
+    <div class="ring" id="ring"></div>
+    <svg class="heart" id="heart" viewBox="0 0 100 90" aria-label="Compatibility heart">
+      <defs>
+        <clipPath id="clip"><path id="shape" d="M50 85C20 62 4 45 4 27 4 13 15 4 28 4c10 0 18 6 22 14C54 10 62 4 72 4c13 0 24 9 24 23 0 18-16 35-46 58z"/></clipPath>
+        <linearGradient id="grad" x1="0" y1="1" x2="0" y2="0">
+          <stop id="s1" offset="0" stop-color="#f4a3c2"/>
+          <stop id="s2" offset="1" stop-color="#fbd3e2"/>
+        </linearGradient>
+      <linearGradient id="gloss" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".38"/><stop offset=".45" stop-color="#fff" stop-opacity=".04"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+        <linearGradient id="edge" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fde3ed"/><stop offset=".5" stop-color="#e98bb0"/><stop offset="1" stop-color="#b9b9c6"/></linearGradient>
+      </defs>
+      <path d="M50 85C20 62 4 45 4 27 4 13 15 4 28 4c10 0 18 6 22 14C54 10 62 4 72 4c13 0 24 9 24 23 0 18-16 35-46 58z" fill="var(--gray)" opacity=".55"/>
+      <g clip-path="url(#clip)">
+        <g id="level" transform="translate(0 77.6)">
+          <g class="wave"><path d="M-100 0Q-87.5 -3 -75 0T-50 0 -25 0 0 0 25 0 50 0 75 0 100 0 125 0 150 0V100H-100z" fill="url(#grad)"/></g>
+        </g>
+      </g>
+      <path d="M50 85C20 62 4 45 4 27 4 13 15 4 28 4c10 0 18 6 22 14C54 10 62 4 72 4c13 0 24 9 24 23 0 18-16 35-46 58z" fill="url(#gloss)" stroke="url(#edge)" stroke-width="2.4" stroke-linejoin="round"/>
+      <path d="M17 24c0-6 4-11 10-12" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" opacity=".7"/>
+      <text class="num" id="num" x="50" y="46"></text>
+    </svg>
+  </div>
+
+  <div class="panel">
+    <div class="field"><span>♥</span><input id="n1" dir="auto" type="text" placeholder="First name" maxlength="30" autocomplete="off"></div>
+    <div class="field"><span>♥</span><input id="n2" dir="auto" type="text" placeholder="Second name" maxlength="30" autocomplete="off"></div>
+    <div class="note"><small>A gentle reminder</small><p>This is not a real assessment. We already know the true worth of the people we love, and <em>no number could ever measure it.</em></p></div>
+    <button id="go">Find the Match ♥</button>
+    <p id="error" role="alert"></p>
+  </div>
+  <div id="msg" aria-live="polite"></div>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
